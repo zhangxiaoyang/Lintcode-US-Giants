@@ -1,2 +1,6 @@
-!.cpp
-!.py
+*
+!*/
+!*.cpp
+!*.py
+!*.opml
+!.gitignore
