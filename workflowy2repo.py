@@ -37,6 +37,9 @@ def workflowy2repo(raw, outputDir):
             except:
                 print traceback.print_exc()
 
+def clean(raw):
+    return re.sub(r'(?<=text=")- ', '', raw)
+
 if __name__ == '__main__':
     inputFile = 'workflowy.opml'
     outputDir = 'code'
@@ -47,6 +50,6 @@ if __name__ == '__main__':
     print 'Generating code ...'
     with open(inputFile, 'r') as f:
         raw = f.read()
-        workflowy2repo(raw, outputDir)
+        workflowy2repo(clean(raw), outputDir)
 
     print 'Done!'
